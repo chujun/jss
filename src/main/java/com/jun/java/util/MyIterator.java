@@ -1,5 +1,6 @@
 package com.jun.java.util;
 
+import java.util.Iterator;
 import java.util.NoSuchElementException;
 import java.util.Objects;
 import java.util.function.Consumer;
@@ -9,12 +10,13 @@ import java.util.function.Consumer;
  * @date 2020-06-03
  * @see java.util.Iterator
  */
-public interface MyIterator<E> {
+public interface MyIterator<E> extends Iterator<E> {
     /**
-     * jfm
+     * jfm：just for me
      *
      * @return {@code true} if the iteration has more elements
      */
+    @Override
     boolean hasNext();
 
     /**
@@ -23,6 +25,7 @@ public interface MyIterator<E> {
      * @return the next element in the iteration
      * @throws NoSuchElementException if the iteration has no more elements
      */
+    @Override
     E next();
 
     /**
@@ -37,6 +40,7 @@ public interface MyIterator<E> {
      * @implSpec The default implementation throws an instance of
      * {@link UnsupportedOperationException} and performs no other action.
      */
+    @Override
     default void remove() {
         throw new UnsupportedOperationException("remove");
     }
@@ -49,6 +53,7 @@ public interface MyIterator<E> {
      * @throws NullPointerException if the specified action is null
      * @since 1.8
      */
+    @Override
     default void forEachRemaining(Consumer<? super E> action) {
         Objects.requireNonNull(action);
         while (hasNext()) {
