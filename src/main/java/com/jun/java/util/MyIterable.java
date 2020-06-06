@@ -37,6 +37,8 @@ public interface MyIterable<T> extends Iterable<T> {
     }
 
     /**
+     * TODO:cj study
+     *
      * @return a {@code Spliterator} over the elements described by this
      * {@code Iterable}.
      * @since 1.8
