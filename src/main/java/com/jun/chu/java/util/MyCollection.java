@@ -1,4 +1,4 @@
-package com.jun.java.util;
+package com.jun.chu.java.util;
 
 import java.util.*;
 import java.util.function.Predicate;
@@ -6,13 +6,16 @@ import java.util.stream.Stream;
 import java.util.stream.StreamSupport;
 
 /**
+ * 继承Collection是为了解决能在stream流相关api中使用该接口，
+ * 这里暂时不打算重写steam相关api
+ *
  * @author chujun
  * @date 2020-06-03
  * @see java.util.Collection
  */
 public interface MyCollection<E> extends MyIterable<E>, Collection<E> {
     /**
-     * jfm
+     * jfd
      *
      * @return the number of elements in this collection
      */
@@ -27,7 +30,12 @@ public interface MyCollection<E> extends MyIterable<E>, Collection<E> {
     @Override
     boolean isEmpty();
 
-
+    /**
+     * jfd
+     *
+     * @param o o
+     * @return boolean
+     */
     @Override
     boolean contains(Object o);
 

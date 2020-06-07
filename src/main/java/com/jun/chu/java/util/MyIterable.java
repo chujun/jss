@@ -1,4 +1,4 @@
-package com.jun.java.util;
+package com.jun.chu.java.util;
 
 import java.util.Objects;
 import java.util.Spliterator;
@@ -21,7 +21,7 @@ public interface MyIterable<T> extends Iterable<T> {
     MyIterator<T> iterator();
 
     /**
-     * jfm
+     * jfd
      *
      * @param action The action to be performed for each element
      * @throws NullPointerException if the specified action is null
@@ -37,7 +37,7 @@ public interface MyIterable<T> extends Iterable<T> {
     }
 
     /**
-     * TODO:cj study
+     * tbs
      *
      * @return a {@code Spliterator} over the elements described by this
      * {@code Iterable}.

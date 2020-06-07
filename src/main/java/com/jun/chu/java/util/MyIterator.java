@@ -1,4 +1,4 @@
-package com.jun.java.util;
+package com.jun.chu.java.util;
 
 import java.util.Iterator;
 import java.util.NoSuchElementException;
@@ -12,7 +12,7 @@ import java.util.function.Consumer;
  */
 public interface MyIterator<E> extends Iterator<E> {
     /**
-     * jfm：just for me
+     * jfd：just for me
      *
      * @return {@code true} if the iteration has more elements
      */
@@ -29,7 +29,7 @@ public interface MyIterator<E> extends Iterator<E> {
     E next();
 
     /**
-     * jfm
+     * jfd
      *
      * @throws UnsupportedOperationException if the {@code remove}
      *                                       operation is not supported by this iterator
@@ -47,7 +47,7 @@ public interface MyIterator<E> extends Iterator<E> {
 
 
     /**
-     * jfm
+     * jfd
      *
      * @param action The action to be performed for each element
      * @throws NullPointerException if the specified action is null
