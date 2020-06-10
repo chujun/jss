@@ -135,7 +135,6 @@ public interface MyList<E> extends MyCollection<E> {
      */
     default void sort(Comparator<? super E> c) {
         Object[] a = this.toArray();
-
         MyArrays.sort(a, (Comparator) c);
         ListIterator<E> i = this.listIterator();
         for (Object e : a) {
