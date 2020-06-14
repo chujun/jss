@@ -13,24 +13,39 @@ import java.util.stream.IntStream;
  * @date 2020-06-14
  */
 public class MyArrayTest {
+    private final static Integer INSERTION_SORT_THRESHOLD = 47;
+
     @Test
-    public void test(){
-        int[] data=new int[]{3,2,1};
+    public void test() {
+        int[] data = new int[]{3, 2, 1};
         Arrays.sort(data);
     }
+
     @Test
-    public void testJdkCorrectness() {
-        int length = 100000;
-        int[] data = generateData(length);
-        Arrays.sort(data);
-        validate(data);
+    public void testInsertSort() {
+        IntStream.range(0, 100).forEach(item -> {
+            int length = Math.max(1, INSERTION_SORT_THRESHOLD - 1);
+            int[] data = generateData(length);
+            MyArrays.sort(data);
+            validate(data);
+        });
+
     }
+
 
     @Test
     public void testCorrectness() {
         int length = 100000;
         int[] data = generateData(length);
         MyArrays.sort(data);
+        validate(data);
+    }
+
+    @Test
+    public void testJdkCorrectness() {
+        int length = 100000;
+        int[] data = generateData(length);
+        Arrays.sort(data);
         validate(data);
     }
 
@@ -46,7 +61,7 @@ public class MyArrayTest {
     }
 
     private boolean isSorted(int[] sorted) {
-        for (int i = 0; i < sorted.length-1; i++) {
+        for (int i = 0; i < sorted.length - 1; i++) {
             int j = i + 1;
             if (sorted[j] < sorted[i]) {
                 return false;

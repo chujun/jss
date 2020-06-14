@@ -105,12 +105,12 @@ final class MyDualPivotQuicksort {
                  * the leftmost part.
                  */
                 for (int i = left, j = i; i < right; j = ++i) {
-                    //待插入数据
                     int ai = a[i + 1];
-                    //插入排序稳定原因所在(dfs)
-                    for (; ai < a[j] && j >= left; j--) {
-                        //算法循环不变式
+                    while (ai < a[j]) {
                         a[j + 1] = a[j];
+                        if (j-- == left) {
+                            break;
+                        }
                     }
                     a[j + 1] = ai;
                 }
