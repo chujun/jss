@@ -14,6 +14,11 @@ import java.util.stream.IntStream;
  */
 public class MyArrayTest {
     @Test
+    public void test(){
+        int[] data=new int[]{3,2,1};
+        Arrays.sort(data);
+    }
+    @Test
     public void testJdkCorrectness() {
         int length = 100000;
         int[] data = generateData(length);

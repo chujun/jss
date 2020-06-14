@@ -45,8 +45,9 @@ public class MyArrays {
 
     /**
      * 升序排序
-     * 排序算法采用Dual-Pivot快速排序(2009年俄罗斯人提出来的，90年代快速排序就基本稳定了)
-     * 创造性统计时间复杂度O(n log(n))，通常比传统快速排序算法(一个点)快
+     * 排序算法采用Dual-Pivot快速排序(2009年俄罗斯人提出来的，而快速排序算法90年代就基本稳定了，
+     * 意味着一项东西10多年没有变化过，必然是思维方式等方面发生了变化)
+     * 创造性进行了较为新颖的统计时间复杂度O(n log(n))，通常比传统快速排序算法(一个点)快
      * Sorts the specified array into ascending numerical order.
      *
      * <p>Implementation note: The sorting algorithm is a Dual-Pivot Quicksort
@@ -58,8 +59,7 @@ public class MyArrays {
      * @param a the array to be sorted
      */
     public static void sort(int[] a) {
-        //tbs
-        // MyDualPivotQuicksort.sort(a, 0, a.length - 1, null, 0, 0);
+        MyDualPivotQuicksort.sort(a, 0, a.length - 1, null, 0, 0);
     }
 
 
