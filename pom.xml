@@ -16,9 +16,15 @@
         <lombok.version>1.18.2</lombok.version>
         <org.mapstruct.version>1.2.0.Final</org.mapstruct.version>
         <jmockit.version>1.36</jmockit.version>
+        <ahs.common-util.version>2.1.10</ahs.common-util.version>
     </properties>
 
     <dependencies>
+        <dependency>
+            <groupId>com.aihuishou</groupId>
+            <artifactId>common-util</artifactId>
+            <version>${ahs.common-util.version}</version>
+        </dependency>
 
         <dependency>
             <groupId>com.google.guava</groupId>

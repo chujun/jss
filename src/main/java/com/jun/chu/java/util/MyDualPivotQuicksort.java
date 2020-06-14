@@ -23,7 +23,7 @@ final class MyDualPivotQuicksort {
     /*
      * Tuning parameters.
      */
-x
+
     /**
      * The maximum number of runs in merge sort.
      */

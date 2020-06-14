@@ -58,8 +58,12 @@ public class MyArrays {
      * @param a the array to be sorted
      */
     public static void sort(int[] a) {
-
-        MyDualPivotQuicksort.sort(a, 0, a.length - 1, null, 0, 0);
+        //tbs
+        // MyDualPivotQuicksort.sort(a, 0, a.length - 1, null, 0, 0);
     }
 
+
+    public static void sort(Object[] a, Comparator c) {
+        //tbs
+    }
 }
