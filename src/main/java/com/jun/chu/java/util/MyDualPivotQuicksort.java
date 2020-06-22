@@ -180,5 +180,7 @@ final class MyDualPivotQuicksort {
             }
             return;
         }
+        // Inexpensive approximation of length / 7
+        int seventh = (length >> 3) + (length >> 6) + 1;
     }
 }
