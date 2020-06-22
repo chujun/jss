@@ -30,5 +30,6 @@ public class MyDualPivotQuicksortTest {
         unstarted.stop();
         System.out.println(unstarted.elapsed(TimeUnit.MILLISECONDS));
         //说好不昂贵的近似计算length/7,为什么我单元测试的结果不太一样
+
     }
 }

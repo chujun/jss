@@ -182,5 +182,70 @@ final class MyDualPivotQuicksort {
         }
         // Inexpensive approximation of length / 7
         int seventh = (length >> 3) + (length >> 6) + 1;
+
+        /*
+         * Sort five evenly spaced elements around (and including) the
+         * center element in the range. These elements will be used for
+         * pivot selection as described below. The choice for spacing
+         * these elements was empirically determined to work well on
+         * a wide variety of inputs.
+         */
+        int e3 = (left + right) >>> 1; // The midpoint
+        int e2 = e3 - seventh;
+        int e1 = e2 - seventh;
+        int e4 = e3 + seventh;
+        int e5 = e4 + seventh;
+
+        // Sort these elements using insertion sort
+        if (a[e2] < a[e1]) {
+            int t = a[e2];
+            a[e2] = a[e1];
+            a[e1] = t;
+        }
+
+        if (a[e3] < a[e2]) {
+            int t = a[e3];
+            a[e3] = a[e2];
+            a[e2] = t;
+            if (t < a[e1]) {
+                a[e2] = a[e1];
+                a[e1] = t;
+            }
+        }
+        if (a[e4] < a[e3]) {
+            int t = a[e4];
+            a[e4] = a[e3];
+            a[e3] = t;
+            if (t < a[e2]) {
+                a[e3] = a[e2];
+                a[e2] = t;
+                if (t < a[e1]) {
+                    a[e2] = a[e1];
+                    a[e1] = t;
+                }
+            }
+        }
+        if (a[e5] < a[e4]) {
+            int t = a[e5];
+            a[e5] = a[e4];
+            a[e4] = t;
+            if (t < a[e3]) {
+                a[e4] = a[e3];
+                a[e3] = t;
+                if (t < a[e2]) {
+                    a[e3] = a[e2];
+                    a[e2] = t;
+                    if (t < a[e1]) {
+                        a[e2] = a[e1];
+                        a[e1] = t;
+                    }
+                }
+            }
+        }
+
+        // Pointers
+        int less = left;  // The index of the first element of center part
+        int great = right; // The index before the first element of right part
+
     }
 }
