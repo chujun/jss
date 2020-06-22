@@ -1,6 +1,5 @@
-package com.jun.chu.util;
+package com.jun.chu.java.util;
 
-import com.jun.chu.java.util.MyArrays;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -19,6 +18,7 @@ public class MyArrayTest {
     public void test() {
         int[] data = new int[]{3, 2, 1};
         Arrays.sort(data);
+        validate(data);
     }
 
     @Test
@@ -32,6 +32,13 @@ public class MyArrayTest {
 
     }
 
+    @Test
+    public void testInsertSortCorrectness() {
+        int length = 30;
+        int[] data = generateData(length);
+        MyArrays.sort(data);
+        validate(data);
+    }
 
     @Test
     public void testCorrectness() {
