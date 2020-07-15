@@ -12,6 +12,7 @@ package com.jun.chu.java.util;
  * 使用到的排序算法:
  * 传统插入排序
  * 成对插入排序
+ * 双轴快速排序
  *
  * @author chujun
  * @date 2020-06-10
